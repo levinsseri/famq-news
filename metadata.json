@@ -1,0 +1,6 @@
+{
+  "name": "Famq News Assistant Generator",
+  "description": "Генератор и помощник форматирования постов для модераторов Famq News (Majestic RP)",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

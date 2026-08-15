@@ -1,0 +1,41 @@
+{
+  "entities": {
+    "training_rules": {
+      "title": "Training Rules",
+      "description": "Custom rules taught to the assistant for post formatting and auto-fixing",
+      "type": "object",
+      "properties": {
+        "pattern": { "type": "string", "description": "Trigger word or pattern" },
+        "correction": { "type": "string", "description": "Rule instruction or replacement target" },
+        "category": { "type": "string", "description": "Category: family_name, spoilers, formatting, rule_check" },
+        "enabled": { "type": "boolean", "description": "Whether rule is active" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Creation timestamp" },
+        "notes": { "type": "string", "description": "User notes or explanation" }
+      },
+      "required": ["pattern", "correction", "enabled"]
+    },
+    "custom_dictionary": {
+      "title": "Custom Dictionary",
+      "description": "Transliteration and naming dictionary for family names",
+      "type": "object",
+      "properties": {
+        "cyrillic": { "type": "string", "description": "Raw or Russian name" },
+        "formattedName": { "type": "string", "description": "Formatted English/Discord name (e.g. Allegri Famq)" },
+        "updatedAt": { "type": "string", "format": "date-time", "description": "Update timestamp" }
+      },
+      "required": ["cyrillic", "formattedName"]
+    },
+    "corrections_history": {
+      "title": "Corrections History",
+      "description": "Saved examples of user corrections for AI model training context",
+      "type": "object",
+      "properties": {
+        "originalText": { "type": "string", "description": "Original raw post text" },
+        "fixedText": { "type": "string", "description": "Corrected post text" },
+        "userNotes": { "type": "string", "description": "What was wrong or user feedback" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Creation timestamp" }
+      },
+      "required": ["originalText", "fixedText"]
+    }
+  }
+}
